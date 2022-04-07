@@ -22,10 +22,16 @@
       <tbody>
           @foreach ($posts as $singlepost)
               <tr>
-                  <td>{{$post->id}}</td>
-                  <td>{{$post->title}}</td>
-                  <td>{{$post->content}}</td>
-                  <td>{{$post->slug}}</td>
+                  <td>{{$singlepost->id}}</td>
+                  <td>{{$singlepost->title}}</td>
+                  <td>{{$singlepost->content}}</td>
+                  <td>{{$singlepost->slug}}</td>
+
+                  <td class="d-flex justify-content-between">
+                    <a href="{{route('admin.posts.show', $singlepost->id)}}" class="btn btn-info pt-1 pb-1">Mostra</a>
+                    <a href="{{route('admin.posts.edit', $singlepost->id)}}" class="btn btn-danger pt-1 pb-1">Modifica</a>
+                    <a href="{{route('admin.posts.show', $singlepost->id)}}" class="btn btn-warning pt-1 pb-1">Elimina</a>
+                  </td>
               </tr>
           @endforeach
       </tbody>
