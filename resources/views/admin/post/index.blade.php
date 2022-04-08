@@ -24,13 +24,21 @@
               <tr>
                   <td>{{$singlepost->id}}</td>
                   <td>{{$singlepost->title}}</td>
-                  <td>{{$singlepost->content}}</td>
+                  <td> {{Str::limit($singlepost->content, 70)}} </td>
                   <td>{{$singlepost->slug}}</td>
 
                   <td class="d-flex justify-content-between">
                     <a href="{{route('admin.posts.show', $singlepost->id)}}" class="btn btn-info pt-1 pb-1">Mostra</a>
                     <a href="{{route('admin.posts.edit', $singlepost->id)}}" class="btn btn-danger pt-1 pb-1">Modifica</a>
-                    <a href="{{route('admin.posts.show', $singlepost->id)}}" class="btn btn-warning pt-1 pb-1">Elimina</a>
+                    
+                    <form method="POST" action="{{route('admin.posts.destroy', $singlepost->id)}}">
+
+                    @csrf
+                    @method('DELETE')
+
+                        <button class="btn btn-warning pt-1 pb-1" type="submit">Elimina</a>
+                    
+                    </form>
                   </td>
               </tr>
           @endforeach
