@@ -14,6 +14,7 @@
           <th scope="col">Titolo</th>
           <th scope="col">Testo</th>
           <th scope="col">Slug</th>
+          <th scope="col">Categoria</th>
           <th scope="col"></th>
         </tr>
 
@@ -26,6 +27,7 @@
                   <td>{{$singlepost->title}}</td>
                   <td> {{Str::limit($singlepost->content, 70)}} </td>
                   <td>{{$singlepost->slug}}</td>
+                  <td>{{$singlepost->category->name}}</td>
 
                   <td class="d-flex justify-content-between">
                     <a href="{{route('admin.posts.show', $singlepost->id)}}" class="btn btn-info pt-1 pb-1">Mostra</a>
