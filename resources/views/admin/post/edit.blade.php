@@ -10,6 +10,20 @@
         @method('PUT')
 
         <div class="form-group">
+
+          <label for="category_id">Categoria</label>
+          <select class="form-control" id="category_id" name="category_id">
+            
+            <option value="">Seleziona una categoria</option>
+            @foreach ($categories as $category)
+                <option value="{{$category->id}}">{{$category->name}}</option>
+            @endforeach
+
+          </select>
+
+        </div>
+
+        <div class="form-group">
           <label for="title">Titolo</label>
           <input type="text" class="form-control" name="title" id="title" value="{{old('title', $post->title)}}">
         </div>

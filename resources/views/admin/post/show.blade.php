@@ -6,6 +6,7 @@
 
     <h1>{{$post->title}}</h1>
     <div>Testo: {{$post->content}}</div>
+    <div>Categoria: {{$post->category->name}}</div>
     <div>Slug: {{$post->slug}}</div>
 
     <div class="mt-5">

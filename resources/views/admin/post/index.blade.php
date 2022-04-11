@@ -27,7 +27,7 @@
                   <td>{{$singlepost->title}}</td>
                   <td> {{Str::limit($singlepost->content, 70)}} </td>
                   <td>{{$singlepost->slug}}</td>
-                  <td>{{$singlepost->category->name}}</td>
+                  <td>{{isset($singlepost->category) ? $singlepost->category->name: 'N.D.'}}</td>
 
                   <td class="d-flex justify-content-between">
                     <a href="{{route('admin.posts.show', $singlepost->id)}}" class="btn btn-info pt-1 pb-1">Mostra</a>
